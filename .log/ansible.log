@@ -2127,3 +2127,15 @@ The offending line appears to be:
     "msg": "Failed to connect to the host via ssh: Shared connection to 192.168.8.33 closed.\r\n", 
     "unreachable": true
 }
+2019-02-08 15:29:58,233 p=20146 u=root |  ERROR! Syntax Error while loading YAML.
+  did not find expected '-' indicator
+
+The error appears to have been in '/home/gillian/Code/ansible-picluster-k8s/roles/common/tasks/main.yml': line 62, column 2, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+- name: Reboot (as needed)
+ reboot:
+ ^ here
+

@@ -1,0 +1,9 @@
+- name: Install nessisary pkgs
+  apt: name={{item}} state=present
+  with_items:
+    - python-smbus
+    - i2c-tools
+
+- name: Enable I2C
+  shell: "raspi-config nonint do_i2c 0"
+  when: raspiconfig.I2C

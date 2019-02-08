@@ -1,0 +1,5 @@
+- hosts: all
+  roles:
+    - pi_setup
+    - deploy-ssh
+    - deploy-display

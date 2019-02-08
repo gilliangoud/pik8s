@@ -1,0 +1,41 @@
+- name: Install nessisary pkgs
+  apt: name={{item}} state=present
+  with_items:
+    - build-essential
+    - python-dev
+    - python-pip
+    - python-imaging
+    - python-smbus
+    - git
+
+# - name: Download SSD1306 library
+#   git: repo=https://github.com/adafruit/Adafruit_Python_SSD1306.git dest=~/lcdlib/
+#     recursive=yes accept_hostkey=yes update=yes track_submodules=yes force=yes
+#   ignore_errors: yes
+#   become: false
+
+- name: Copy the code to the user folder
+  copy:
+    src: files/
+    dest: /home/pi/
+    recurse: yes
+    owner: pi
+    group: pi
+    mode: u=rwX,g=rX,o=rX
+
+- name: Make directory tree readable
+  file:
+    path: /home/pi/lcdlib
+    mode: u=rwX,g=rX,o=rX
+    recurse: yes
+
+- name: Install the library
+  command: bash -lc "cd /home/pi/lcdlib/ && sudo python setup.py install"
+  become: false
+
+- name: Add python display program to startup
+  lineinfile:
+    path: "/etc/rc.local"
+    insertbefore: 'exit 0'
+    line: "sudo python /home/pi/disp.py  &"
+    state: present

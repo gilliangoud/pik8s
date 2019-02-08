@@ -1,0 +1,96 @@
+- name: Install nessisary pkgs
+  apt: name={{item}} state=present
+  with_items:
+    - python-smbus
+    - i2c-tools
+
+- name: Rename hostname
+  shell: 'echo {{ inventory_hostname }} > /etc/hostname'
+
+- name: Rename host in hosts
+  lineinfile:
+    path: "/etc/hosts"
+    line: "127.0.0.1 {{ inventory_hostname }}"
+    state: present
+
+- name: Change password for user pi
+  shell: 'echo pi:{{ PI_USER_PASSWORD }} | chpasswd'
+
+- name: Disable bluetooth LE
+  systemd:
+    name: bluetooth
+    enabled: no
+    state: stopped
+
+  when: not RASPBIAN_ENABLE_BLUETOOTH
+  tags:
+    - bluetooth
+
+- name: Enable bluetooth LE
+  systemd:
+    name: bluetooth
+    enabled: yes
+    state: started
+  when: RASPBIAN_ENABLE_BLUETOOTH
+  tags:
+    -bluetooth
+
+- name: Set raspiconfig variable
+  set_fact:
+    raspiconfig: "{{ RASPICONFIG }}"
+
+- name: Enable serial
+  shell: "raspi-config nonint do_serial 0"
+  when: raspiconfig.SERIAL
+
+- name: Enable I2C
+  shell: "raspi-config nonint do_i2c 0"
+  when: raspiconfig.I2C
+
+- name: Enable SPI
+  shell: "raspi-config nonint do_spi 0"
+  when: raspiconfig.SPI
+
+- name: Enable Camera
+  shell: "raspi-config nonint do_camera 0"
+  when: raspiconfig.CAMERA
+
+- name: Enable VNC
+  shell: "raspi-config nonint do_vnc 0"
+  when: raspiconfig.VNC
+
+- name: Enable OneWire
+  shell: "raspi-config nonint do_onewire 0"
+  when: raspiconfig.ONEWIRE
+
+- name: Enable Remote GPIO
+  shell: "raspi-config nonint do_rgpio 0"
+  when: raspiconfig.RGPIO
+
+- name: Disable serial
+  shell: "raspi-config nonint do_serial 1"
+  when: raspiconfig.SERIAL
+
+- name: Disable I2C
+  shell: "raspi-config nonint do_i2c 1"
+  when: not raspiconfig.I2C
+
+- name: Disable SPI
+  shell: "raspi-config nonint do_spi 1"
+  when: not raspiconfig.SPI
+
+- name: Disable Camera
+  shell: "raspi-config nonint do_camera 1"
+  when: not raspiconfig.CAMERA
+
+- name: Disable VNC
+  shell: "raspi-config nonint do_vnc 1"
+  when: not raspiconfig.VNC
+
+- name: Disable OneWire
+  shell: "raspi-config nonint do_onewire 1"
+  when: not raspiconfig.ONEWIRE
+
+- name: Disable Remote GPIO
+  shell: "raspi-config nonint do_rgpio 1"
+  when: not raspiconfig.RGPIO

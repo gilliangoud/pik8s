@@ -1,0 +1,10 @@
+[nodes]
+pik8s000    ansible_host=192.168.8.29
+pik8s001    ansible_host=192.168.8.27
+pik8s002    ansible_host=192.168.8.30
+pik8s003    ansible_host=192.168.8.31
+pik8s004    ansible_host=192.168.8.32
+pik8s005    ansible_host=192.168.8.33
+
+[master]
+pik8s000

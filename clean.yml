@@ -1,5 +1,5 @@
 ---
-# this removes all the docker images, logs, resets k8s and cleans apt
+# this removes everything from the nodes for a clean start
 - hosts: all
   roles:
     - cleanup

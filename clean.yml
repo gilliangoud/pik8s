@@ -1,0 +1,5 @@
+---
+# this removes all the docker images, logs, resets k8s and cleans apt
+- hosts: all
+  roles:
+    - cleanup

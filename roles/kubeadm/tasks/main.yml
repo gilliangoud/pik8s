@@ -46,8 +46,8 @@
   template:
     src: kubernetes.list
     dest: /etc/apt/sources.list.d/kubernetes.list
-    owner: root
-    group: root
+    owner: pi
+    group: pi
     mode: 0644
 
 - name: apt-get update
@@ -64,3 +64,8 @@
     - kubelet
     - kubeadm
     - kubectl
+
+
+- name: Reboot Message
+  debug:
+    msg: "REBOOT ALL NODES."

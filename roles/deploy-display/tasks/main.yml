@@ -18,7 +18,6 @@
   copy:
     src: files/
     dest: /home/pi/
-    recurse: yes
     owner: pi
     group: pi
     mode: u=rwX,g=rX,o=rX
@@ -39,3 +38,28 @@
     insertbefore: 'exit 0'
     line: "sudo python /home/pi/disp.py  &"
     state: present
+
+# - name: Reboot (as needed)
+#  reboot:
+#    reboot_timeout: 3600
+#  when: cmdline or timezone or hostname or gpu_mem is changed
+#  tags:
+#    - boot
+#    - shutdown
+- name: Reboot Message
+  debug:
+    msg: "A reboot is required but the reboot module is a little wonky. Hopefully someone fixes this soon."
+  when: cmdline or timezone or hostname or gpu_mem is changed
+
+- name: Reboot
+  shell: sleep 2 && shutdown -r now "Ansible Reboot"
+  async: 1
+  poll: 0
+  ignore_errors: True
+
+- name: Wait for Reboot
+  local_action: wait_for
+  args:
+    host: "{{ inventory_hostname }}"
+    state: started
+  become: False

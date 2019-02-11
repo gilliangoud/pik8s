@@ -1,11 +1,11 @@
-- hosts: all
-  roles:
-    - kubeadm
+# - hosts: all
+#   roles:
+#     - kubeadm
 
 # - hosts: master
 #   roles:
 #     - master
-#     - dashboard
+#     # - dashboard
 
 # - hosts: all:!master
 #   roles:

@@ -778,8 +778,8 @@
     }, 
     "ansible_fips": false, 
     "ansible_form_factor": "", 
-    "ansible_fqdn": "raspberrypi", 
-    "ansible_hostname": "raspberrypi", 
+    "ansible_fqdn": "localhost", 
+    "ansible_hostname": "pik8s002", 
     "ansible_interfaces": [
         "lo", 
         "wlan0", 
@@ -871,7 +871,7 @@
             "uuid": "9304-D9FD"
         }
     ], 
-    "ansible_nodename": "raspberrypi", 
+    "ansible_nodename": "pik8s002", 
     "ansible_os_family": "Debian", 
     "ansible_pkg_mgr": "apt", 
     "ansible_processor": [

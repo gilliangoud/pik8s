@@ -1,8 +1,16 @@
+- name: apt-get update
+  apt:
+    update_cache: yes
+    autoclean: yes
+    autoremove: yes
+    cache_valid_time: 86400
+
 - name: Install nessisary pkgs
-  apt: name={{item}} state=present
+  apt: name={{item}} state=latest
   with_items:
     - python-smbus
     - i2c-tools
+    - python-apt
 
 - name: Rename hostname
   shell: 'echo {{ inventory_hostname }} > /etc/hostname'
@@ -94,3 +102,40 @@
 - name: Disable Remote GPIO
   shell: "raspi-config nonint do_rgpio 1"
   when: not raspiconfig.RGPIO
+
+- name: reduce gpu memory
+  lineinfile:
+    path: /boot/config.txt
+    line: gpu_mem=16
+  register: gpu_mem
+  when: gpu_mem_check.stdout == ""
+
+- name: Enabling cgroup options at boot
+  copy:
+    src: cmdline.txt
+    dest: /boot/cmdline.txt
+    owner: root
+    group: root
+    mode: 0755
+  register: cmdline
+  tags:
+    - boot
+
+- name: set timezone to Amsterdam
+  timezone:
+    name: Europe/Amsterdam
+  register: timezone
+
+- include: checks.yml
+
+# - name: Reboot (as needed)
+#  reboot:
+#    reboot_timeout: 3600
+#  when: cmdline or timezone or hostname or gpu_mem is changed
+#  tags:
+#    - boot
+#    - shutdown
+- name: Reboot Message
+  debug:
+    msg: "A reboot is required but the reboot module is a little wonky. Hopefully someone fixes this soon."
+  when: cmdline or timezone or hostname or gpu_mem is changed

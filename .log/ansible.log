@@ -7347,3 +7347,203 @@ The offending line appears to be:
 2019-02-08 17:47:25,055 p=26540 u=gillian |  changed: [pik8s000]
 2019-02-08 17:47:25,059 p=26540 u=gillian |  PLAY RECAP *********************************************************************
 2019-02-08 17:47:25,059 p=26540 u=gillian |  pik8s000                   : ok=2    changed=1    unreachable=0    failed=0   
+2019-02-11 13:30:56,011 p=10087 u=gillian |  PLAY [all] *******************************************************************************************************************************************************************************************
+2019-02-11 13:30:56,040 p=10087 u=gillian |  TASK [Gathering Facts] *******************************************************************************************************************************************************************************
+2019-02-11 13:31:06,126 p=10087 u=gillian |  fatal: [k8s000]: UNREACHABLE! => {"changed": false, "msg": "Failed to connect to the host via ssh: ssh: connect to host 192.168.8.29 port 22: Connection timed out\r\n", "unreachable": true}
+2019-02-11 13:31:06,127 p=10087 u=gillian |  fatal: [k8s002]: UNREACHABLE! => {"changed": false, "msg": "Failed to connect to the host via ssh: ssh: connect to host 192.168.8.30 port 22: Connection timed out\r\n", "unreachable": true}
+2019-02-11 13:31:06,128 p=10087 u=gillian |  fatal: [k8s001]: UNREACHABLE! => {"changed": false, "msg": "Failed to connect to the host via ssh: ssh: connect to host 192.168.8.27 port 22: Connection timed out\r\n", "unreachable": true}
+2019-02-11 13:31:06,133 p=10087 u=gillian |  fatal: [k8s003]: UNREACHABLE! => {"changed": false, "msg": "Failed to connect to the host via ssh: ssh: connect to host 192.168.8.31 port 22: Connection timed out\r\n", "unreachable": true}
+2019-02-11 13:31:06,145 p=10087 u=gillian |  fatal: [k8s004]: UNREACHABLE! => {"changed": false, "msg": "Failed to connect to the host via ssh: ssh: connect to host 192.168.8.32 port 22: Connection timed out\r\n", "unreachable": true}
+2019-02-11 13:31:16,191 p=10087 u=gillian |  fatal: [k8s005]: UNREACHABLE! => {"changed": false, "msg": "Failed to connect to the host via ssh: ssh: connect to host 192.168.8.33 port 22: Connection timed out\r\n", "unreachable": true}
+2019-02-11 13:31:16,193 p=10087 u=gillian |  PLAY RECAP *******************************************************************************************************************************************************************************************
+2019-02-11 13:31:16,193 p=10087 u=gillian |  k8s000                     : ok=0    changed=0    unreachable=1    failed=0   
+2019-02-11 13:31:16,193 p=10087 u=gillian |  k8s001                     : ok=0    changed=0    unreachable=1    failed=0   
+2019-02-11 13:31:16,193 p=10087 u=gillian |  k8s002                     : ok=0    changed=0    unreachable=1    failed=0   
+2019-02-11 13:31:16,193 p=10087 u=gillian |  k8s003                     : ok=0    changed=0    unreachable=1    failed=0   
+2019-02-11 13:31:16,193 p=10087 u=gillian |  k8s004                     : ok=0    changed=0    unreachable=1    failed=0   
+2019-02-11 13:31:16,194 p=10087 u=gillian |  k8s005                     : ok=0    changed=0    unreachable=1    failed=0   
+2019-02-11 13:33:06,217 p=11230 u=gillian |  PLAY [all] *******************************************************************************************************************************************************************************************
+2019-02-11 13:33:06,243 p=11230 u=gillian |  TASK [Gathering Facts] *******************************************************************************************************************************************************************************
+2019-02-11 13:33:10,448 p=11230 u=gillian |  ok: [k8s004]
+2019-02-11 13:33:10,478 p=11230 u=gillian |  ok: [k8s003]
+2019-02-11 13:33:10,501 p=11230 u=gillian |  ok: [k8s002]
+2019-02-11 13:33:10,537 p=11230 u=gillian |  ok: [k8s000]
+2019-02-11 13:33:13,635 p=11230 u=gillian |  ok: [k8s005]
+2019-02-11 13:33:44,146 p=11230 u=gillian |   [ERROR]: User interrupted execution
+
+2019-02-11 13:34:07,739 p=11795 u=gillian |  PLAY [all] *******************************************************************************************************************************************************************************************
+2019-02-11 13:34:07,763 p=11795 u=gillian |  TASK [Gathering Facts] *******************************************************************************************************************************************************************************
+2019-02-11 13:34:10,116 p=11795 u=gillian |  ok: [k8s004]
+2019-02-11 13:34:10,143 p=11795 u=gillian |  ok: [k8s002]
+2019-02-11 13:34:10,166 p=11795 u=gillian |  ok: [k8s000]
+2019-02-11 13:34:10,183 p=11795 u=gillian |  ok: [k8s003]
+2019-02-11 13:34:10,787 p=11795 u=gillian |  ok: [k8s001]
+2019-02-11 13:34:12,024 p=11795 u=gillian |  ok: [k8s005]
+2019-02-11 13:34:12,069 p=11795 u=gillian |  TASK [pi_setup : apt-get update] *********************************************************************************************************************************************************************
+2019-02-11 13:34:46,141 p=11795 u=gillian |  ok: [k8s000]
+2019-02-11 13:34:53,923 p=11795 u=gillian |  ok: [k8s002]
+2019-02-11 13:35:16,972 p=11795 u=gillian |  ok: [k8s003]
+2019-02-11 13:35:17,429 p=11795 u=gillian |  ok: [k8s005]
+2019-02-11 13:35:17,846 p=11795 u=gillian |  ok: [k8s004]
+2019-02-11 13:36:01,726 p=11795 u=gillian |  ok: [k8s001]
+2019-02-11 13:36:01,783 p=11795 u=gillian |  TASK [pi_setup : Install nessisary pkgs] *************************************************************************************************************************************************************
+2019-02-11 13:36:12,289 p=11795 u=gillian |  changed: [k8s000] => (item=[u'python-smbus', u'i2c-tools', u'python-apt'])
+2019-02-11 13:36:18,697 p=11795 u=gillian |  changed: [k8s001] => (item=[u'python-smbus', u'i2c-tools', u'python-apt'])
+2019-02-11 13:36:19,160 p=11795 u=gillian |  changed: [k8s003] => (item=[u'python-smbus', u'i2c-tools', u'python-apt'])
+2019-02-11 13:36:21,594 p=11795 u=gillian |  changed: [k8s004] => (item=[u'python-smbus', u'i2c-tools', u'python-apt'])
+2019-02-11 13:36:22,686 p=11795 u=gillian |  changed: [k8s002] => (item=[u'python-smbus', u'i2c-tools', u'python-apt'])
+2019-02-11 13:36:23,142 p=11795 u=gillian |  changed: [k8s005] => (item=[u'python-smbus', u'i2c-tools', u'python-apt'])
+2019-02-11 13:36:23,193 p=11795 u=gillian |  TASK [pi_setup : Rename hostname] ********************************************************************************************************************************************************************
+2019-02-11 13:36:24,380 p=11795 u=gillian |  changed: [k8s003]
+2019-02-11 13:36:24,381 p=11795 u=gillian |  changed: [k8s002]
+2019-02-11 13:36:24,382 p=11795 u=gillian |  changed: [k8s000]
+2019-02-11 13:36:24,415 p=11795 u=gillian |  changed: [k8s001]
+2019-02-11 13:36:24,416 p=11795 u=gillian |  changed: [k8s004]
+2019-02-11 13:36:25,369 p=11795 u=gillian |  changed: [k8s005]
+2019-02-11 13:36:25,415 p=11795 u=gillian |  TASK [pi_setup : Rename host in hosts] ***************************************************************************************************************************************************************
+2019-02-11 13:36:26,674 p=11795 u=gillian |  changed: [k8s001]
+2019-02-11 13:36:26,676 p=11795 u=gillian |  changed: [k8s003]
+2019-02-11 13:36:26,688 p=11795 u=gillian |  changed: [k8s000]
+2019-02-11 13:36:26,719 p=11795 u=gillian |  changed: [k8s004]
+2019-02-11 13:36:26,741 p=11795 u=gillian |  changed: [k8s002]
+2019-02-11 13:36:27,792 p=11795 u=gillian |  changed: [k8s005]
+2019-02-11 13:36:27,842 p=11795 u=gillian |  TASK [pi_setup : Change password for user pi] ********************************************************************************************************************************************************
+2019-02-11 13:36:28,963 p=11795 u=gillian |  changed: [k8s000]
+2019-02-11 13:36:29,169 p=11795 u=gillian |  changed: [k8s004]
+2019-02-11 13:36:29,170 p=11795 u=gillian |  changed: [k8s003]
+2019-02-11 13:36:29,345 p=11795 u=gillian |  changed: [k8s002]
+2019-02-11 13:36:30,019 p=11795 u=gillian |  changed: [k8s005]
+2019-02-11 13:36:45,001 p=11795 u=gillian |  changed: [k8s001]
+2019-02-11 13:36:45,053 p=11795 u=gillian |  TASK [pi_setup : Disable bluetooth LE] ***************************************************************************************************************************************************************
+2019-02-11 13:36:47,212 p=11795 u=gillian |  changed: [k8s000]
+2019-02-11 13:36:47,283 p=11795 u=gillian |  changed: [k8s001]
+2019-02-11 13:36:49,068 p=11795 u=gillian |  changed: [k8s004]
+2019-02-11 13:36:49,168 p=11795 u=gillian |  changed: [k8s005]
+2019-02-11 13:36:51,654 p=11795 u=gillian |  changed: [k8s003]
+2019-02-11 13:36:57,709 p=11795 u=gillian |  changed: [k8s002]
+2019-02-11 13:36:57,760 p=11795 u=gillian |  TASK [pi_setup : Enable bluetooth LE] ****************************************************************************************************************************************************************
+2019-02-11 13:36:57,810 p=11795 u=gillian |  skipping: [k8s000]
+2019-02-11 13:36:57,859 p=11795 u=gillian |  skipping: [k8s001]
+2019-02-11 13:36:57,910 p=11795 u=gillian |  skipping: [k8s002]
+2019-02-11 13:36:57,960 p=11795 u=gillian |  skipping: [k8s003]
+2019-02-11 13:36:58,010 p=11795 u=gillian |  skipping: [k8s004]
+2019-02-11 13:36:58,022 p=11795 u=gillian |  skipping: [k8s005]
+2019-02-11 13:36:58,086 p=11795 u=gillian |  TASK [pi_setup : Set raspiconfig variable] ***********************************************************************************************************************************************************
+2019-02-11 13:36:58,142 p=11795 u=gillian |  ok: [k8s000]
+2019-02-11 13:36:58,192 p=11795 u=gillian |  ok: [k8s001]
+2019-02-11 13:36:58,253 p=11795 u=gillian |  ok: [k8s002]
+2019-02-11 13:36:58,313 p=11795 u=gillian |  ok: [k8s003]
+2019-02-11 13:36:58,373 p=11795 u=gillian |  ok: [k8s004]
+2019-02-11 13:36:58,416 p=11795 u=gillian |  ok: [k8s005]
+2019-02-11 13:36:58,464 p=11795 u=gillian |  TASK [pi_setup : Enable serial] **********************************************************************************************************************************************************************
+2019-02-11 13:36:59,483 p=11795 u=gillian |  changed: [k8s000]
+2019-02-11 13:36:59,508 p=11795 u=gillian |  changed: [k8s001]
+2019-02-11 13:36:59,647 p=11795 u=gillian |  changed: [k8s002]
+2019-02-11 13:36:59,694 p=11795 u=gillian |  changed: [k8s003]
+2019-02-11 13:36:59,747 p=11795 u=gillian |  changed: [k8s004]
+2019-02-11 13:37:00,502 p=11795 u=gillian |  changed: [k8s005]
+2019-02-11 13:37:00,577 p=11795 u=gillian |  TASK [pi_setup : Enable I2C] *************************************************************************************************************************************************************************
+2019-02-11 13:37:01,971 p=11795 u=gillian |  changed: [k8s000]
+2019-02-11 13:37:02,048 p=11795 u=gillian |  changed: [k8s002]
+2019-02-11 13:37:02,154 p=11795 u=gillian |  changed: [k8s003]
+2019-02-11 13:37:02,960 p=11795 u=gillian |  changed: [k8s004]
+2019-02-11 13:37:03,372 p=11795 u=gillian |  changed: [k8s005]
+2019-02-11 13:37:03,926 p=11795 u=gillian |  changed: [k8s001]
+2019-02-11 13:37:03,972 p=11795 u=gillian |  TASK [pi_setup : Enable SPI] *************************************************************************************************************************************************************************
+2019-02-11 13:37:04,028 p=11795 u=gillian |  skipping: [k8s000]
+2019-02-11 13:37:04,084 p=11795 u=gillian |  skipping: [k8s001]
+2019-02-11 13:37:04,135 p=11795 u=gillian |  skipping: [k8s002]
+2019-02-11 13:37:04,188 p=11795 u=gillian |  skipping: [k8s003]
+2019-02-11 13:37:04,241 p=11795 u=gillian |  skipping: [k8s004]
+2019-02-11 13:37:04,258 p=11795 u=gillian |  skipping: [k8s005]
+2019-02-11 13:37:04,305 p=11795 u=gillian |  TASK [pi_setup : Enable Camera] **********************************************************************************************************************************************************************
+2019-02-11 13:37:04,366 p=11795 u=gillian |  skipping: [k8s000]
+2019-02-11 13:37:04,420 p=11795 u=gillian |  skipping: [k8s001]
+2019-02-11 13:37:04,474 p=11795 u=gillian |  skipping: [k8s002]
+2019-02-11 13:37:04,527 p=11795 u=gillian |  skipping: [k8s003]
+2019-02-11 13:37:04,589 p=11795 u=gillian |  skipping: [k8s004]
+2019-02-11 13:37:04,606 p=11795 u=gillian |  skipping: [k8s005]
+2019-02-11 13:37:04,665 p=11795 u=gillian |  TASK [pi_setup : Enable VNC] *************************************************************************************************************************************************************************
+2019-02-11 13:37:04,726 p=11795 u=gillian |  skipping: [k8s000]
+2019-02-11 13:37:04,786 p=11795 u=gillian |  skipping: [k8s001]
+2019-02-11 13:37:04,839 p=11795 u=gillian |  skipping: [k8s002]
+2019-02-11 13:37:04,893 p=11795 u=gillian |  skipping: [k8s003]
+2019-02-11 13:37:04,956 p=11795 u=gillian |  skipping: [k8s004]
+2019-02-11 13:37:04,972 p=11795 u=gillian |  skipping: [k8s005]
+2019-02-11 13:37:05,025 p=11795 u=gillian |  TASK [pi_setup : Enable OneWire] *********************************************************************************************************************************************************************
+2019-02-11 13:37:05,088 p=11795 u=gillian |  skipping: [k8s000]
+2019-02-11 13:37:05,143 p=11795 u=gillian |  skipping: [k8s001]
+2019-02-11 13:37:05,205 p=11795 u=gillian |  skipping: [k8s002]
+2019-02-11 13:37:05,264 p=11795 u=gillian |  skipping: [k8s003]
+2019-02-11 13:37:05,325 p=11795 u=gillian |  skipping: [k8s004]
+2019-02-11 13:37:05,342 p=11795 u=gillian |  skipping: [k8s005]
+2019-02-11 13:37:05,403 p=11795 u=gillian |  TASK [pi_setup : Enable Remote GPIO] *****************************************************************************************************************************************************************
+2019-02-11 13:37:05,458 p=11795 u=gillian |  skipping: [k8s000]
+2019-02-11 13:37:05,512 p=11795 u=gillian |  skipping: [k8s001]
+2019-02-11 13:37:05,562 p=11795 u=gillian |  skipping: [k8s002]
+2019-02-11 13:37:05,613 p=11795 u=gillian |  skipping: [k8s003]
+2019-02-11 13:37:05,662 p=11795 u=gillian |  skipping: [k8s004]
+2019-02-11 13:37:05,679 p=11795 u=gillian |  skipping: [k8s005]
+2019-02-11 13:37:05,726 p=11795 u=gillian |  TASK [pi_setup : Disable serial] *********************************************************************************************************************************************************************
+2019-02-11 13:37:06,832 p=11795 u=gillian |  changed: [k8s000]
+2019-02-11 13:37:06,946 p=11795 u=gillian |  changed: [k8s001]
+2019-02-11 13:37:06,976 p=11795 u=gillian |  changed: [k8s002]
+2019-02-11 13:37:06,977 p=11795 u=gillian |  changed: [k8s003]
+2019-02-11 13:37:06,998 p=11795 u=gillian |  changed: [k8s004]
+2019-02-11 13:37:07,879 p=11795 u=gillian |  changed: [k8s005]
+2019-02-11 13:37:07,925 p=11795 u=gillian |  TASK [pi_setup : Disable I2C] ************************************************************************************************************************************************************************
+2019-02-11 13:37:07,980 p=11795 u=gillian |  skipping: [k8s000]
+2019-02-11 13:37:08,038 p=11795 u=gillian |  skipping: [k8s001]
+2019-02-11 13:37:08,096 p=11795 u=gillian |  skipping: [k8s002]
+2019-02-11 13:37:08,154 p=11795 u=gillian |  skipping: [k8s003]
+2019-02-11 13:37:08,208 p=11795 u=gillian |  skipping: [k8s004]
+2019-02-11 13:37:08,225 p=11795 u=gillian |  skipping: [k8s005]
+2019-02-11 13:37:08,273 p=11795 u=gillian |  TASK [pi_setup : Disable SPI] ************************************************************************************************************************************************************************
+2019-02-11 13:37:09,566 p=11795 u=gillian |  changed: [k8s000]
+2019-02-11 13:37:09,603 p=11795 u=gillian |  changed: [k8s001]
+2019-02-11 13:37:09,612 p=11795 u=gillian |  changed: [k8s002]
+2019-02-11 13:37:09,634 p=11795 u=gillian |  changed: [k8s003]
+2019-02-11 13:37:09,749 p=11795 u=gillian |  changed: [k8s004]
+2019-02-11 13:37:10,869 p=11795 u=gillian |  changed: [k8s005]
+2019-02-11 13:37:10,918 p=11795 u=gillian |  TASK [pi_setup : Disable Camera] *********************************************************************************************************************************************************************
+2019-02-11 13:37:11,967 p=11795 u=gillian |  changed: [k8s000]
+2019-02-11 13:37:11,994 p=11795 u=gillian |  changed: [k8s001]
+2019-02-11 13:37:12,023 p=11795 u=gillian |  changed: [k8s002]
+2019-02-11 13:37:12,098 p=11795 u=gillian |  changed: [k8s003]
+2019-02-11 13:37:12,154 p=11795 u=gillian |  changed: [k8s004]
+2019-02-11 13:37:13,002 p=11795 u=gillian |  changed: [k8s005]
+2019-02-11 13:37:13,050 p=11795 u=gillian |  TASK [pi_setup : Disable VNC] ************************************************************************************************************************************************************************
+2019-02-11 13:37:14,149 p=11795 u=gillian |  changed: [k8s000]
+2019-02-11 13:37:14,208 p=11795 u=gillian |  changed: [k8s002]
+2019-02-11 13:37:14,248 p=11795 u=gillian |  changed: [k8s001]
+2019-02-11 13:37:14,352 p=11795 u=gillian |  changed: [k8s003]
+2019-02-11 13:37:14,355 p=11795 u=gillian |  changed: [k8s004]
+2019-02-11 13:37:15,204 p=11795 u=gillian |  changed: [k8s005]
+2019-02-11 13:37:15,250 p=11795 u=gillian |  TASK [pi_setup : Disable OneWire] ********************************************************************************************************************************************************************
+2019-02-11 13:37:16,367 p=11795 u=gillian |  changed: [k8s000]
+2019-02-11 13:37:16,385 p=11795 u=gillian |  changed: [k8s001]
+2019-02-11 13:37:16,514 p=11795 u=gillian |  changed: [k8s003]
+2019-02-11 13:37:16,516 p=11795 u=gillian |  changed: [k8s002]
+2019-02-11 13:37:16,608 p=11795 u=gillian |  changed: [k8s004]
+2019-02-11 13:37:17,453 p=11795 u=gillian |  changed: [k8s005]
+2019-02-11 13:37:17,504 p=11795 u=gillian |  TASK [pi_setup : Disable Remote GPIO] ****************************************************************************************************************************************************************
+2019-02-11 13:37:18,819 p=11795 u=gillian |  changed: [k8s000]
+2019-02-11 13:37:18,855 p=11795 u=gillian |  changed: [k8s002]
+2019-02-11 13:37:18,955 p=11795 u=gillian |  changed: [k8s003]
+2019-02-11 13:37:19,001 p=11795 u=gillian |  changed: [k8s004]
+2019-02-11 13:37:20,055 p=11795 u=gillian |  changed: [k8s005]
+2019-02-11 13:37:29,343 p=11795 u=gillian |  changed: [k8s001]
+2019-02-11 13:37:29,398 p=11795 u=gillian |  TASK [pi_setup : reduce gpu memory] ******************************************************************************************************************************************************************
+2019-02-11 13:37:29,453 p=11795 u=gillian |  fatal: [k8s000]: FAILED! => {"msg": "The conditional check 'gpu_mem_check.stdout == \"\"' failed. The error was: error while evaluating conditional (gpu_mem_check.stdout == \"\"): 'gpu_mem_check' is undefined\n\nThe error appears to have been in '/home/gillian/Code/ansible-picluster-k8s/roles/pi_setup/tasks/main.yml': line 106, column 3, but may\nbe elsewhere in the file depending on the exact syntax problem.\n\nThe offending line appears to be:\n\n\n- name: reduce gpu memory\n  ^ here\n"}
+2019-02-11 13:37:29,509 p=11795 u=gillian |  fatal: [k8s001]: FAILED! => {"msg": "The conditional check 'gpu_mem_check.stdout == \"\"' failed. The error was: error while evaluating conditional (gpu_mem_check.stdout == \"\"): 'gpu_mem_check' is undefined\n\nThe error appears to have been in '/home/gillian/Code/ansible-picluster-k8s/roles/pi_setup/tasks/main.yml': line 106, column 3, but may\nbe elsewhere in the file depending on the exact syntax problem.\n\nThe offending line appears to be:\n\n\n- name: reduce gpu memory\n  ^ here\n"}
+2019-02-11 13:37:29,559 p=11795 u=gillian |  fatal: [k8s002]: FAILED! => {"msg": "The conditional check 'gpu_mem_check.stdout == \"\"' failed. The error was: error while evaluating conditional (gpu_mem_check.stdout == \"\"): 'gpu_mem_check' is undefined\n\nThe error appears to have been in '/home/gillian/Code/ansible-picluster-k8s/roles/pi_setup/tasks/main.yml': line 106, column 3, but may\nbe elsewhere in the file depending on the exact syntax problem.\n\nThe offending line appears to be:\n\n\n- name: reduce gpu memory\n  ^ here\n"}
+2019-02-11 13:37:29,616 p=11795 u=gillian |  fatal: [k8s003]: FAILED! => {"msg": "The conditional check 'gpu_mem_check.stdout == \"\"' failed. The error was: error while evaluating conditional (gpu_mem_check.stdout == \"\"): 'gpu_mem_check' is undefined\n\nThe error appears to have been in '/home/gillian/Code/ansible-picluster-k8s/roles/pi_setup/tasks/main.yml': line 106, column 3, but may\nbe elsewhere in the file depending on the exact syntax problem.\n\nThe offending line appears to be:\n\n\n- name: reduce gpu memory\n  ^ here\n"}
+2019-02-11 13:37:29,674 p=11795 u=gillian |  fatal: [k8s004]: FAILED! => {"msg": "The conditional check 'gpu_mem_check.stdout == \"\"' failed. The error was: error while evaluating conditional (gpu_mem_check.stdout == \"\"): 'gpu_mem_check' is undefined\n\nThe error appears to have been in '/home/gillian/Code/ansible-picluster-k8s/roles/pi_setup/tasks/main.yml': line 106, column 3, but may\nbe elsewhere in the file depending on the exact syntax problem.\n\nThe offending line appears to be:\n\n\n- name: reduce gpu memory\n  ^ here\n"}
+2019-02-11 13:37:29,690 p=11795 u=gillian |  fatal: [k8s005]: FAILED! => {"msg": "The conditional check 'gpu_mem_check.stdout == \"\"' failed. The error was: error while evaluating conditional (gpu_mem_check.stdout == \"\"): 'gpu_mem_check' is undefined\n\nThe error appears to have been in '/home/gillian/Code/ansible-picluster-k8s/roles/pi_setup/tasks/main.yml': line 106, column 3, but may\nbe elsewhere in the file depending on the exact syntax problem.\n\nThe offending line appears to be:\n\n\n- name: reduce gpu memory\n  ^ here\n"}
+2019-02-11 13:37:29,692 p=11795 u=gillian |  PLAY RECAP *******************************************************************************************************************************************************************************************
+2019-02-11 13:37:29,693 p=11795 u=gillian |  k8s000                     : ok=16   changed=13   unreachable=0    failed=1   
+2019-02-11 13:37:29,693 p=11795 u=gillian |  k8s001                     : ok=16   changed=13   unreachable=0    failed=1   
+2019-02-11 13:37:29,693 p=11795 u=gillian |  k8s002                     : ok=16   changed=13   unreachable=0    failed=1   
+2019-02-11 13:37:29,693 p=11795 u=gillian |  k8s003                     : ok=16   changed=13   unreachable=0    failed=1   
+2019-02-11 13:37:29,694 p=11795 u=gillian |  k8s004                     : ok=16   changed=13   unreachable=0    failed=1   
+2019-02-11 13:37:29,694 p=11795 u=gillian |  k8s005                     : ok=16   changed=13   unreachable=0    failed=1   

@@ -21,6 +21,15 @@
     line: "127.0.0.1 {{ inventory_hostname }}"
     state: present
 
+- name: Add IP address of all hosts to all hosts
+  lineinfile:
+    dest: /etc/hosts
+    regexp: '.*{{ item }}$'
+    line: "{{ hostvars[item].ansible_host }} {{item}}"
+    state: present
+  when: hostvars[item].ansible_host is defined
+  with_items: "{{ groups.all }}"
+
 - name: Change password for user pi
   shell: 'echo pi:{{ PI_USER_PASSWORD }} | chpasswd'
 

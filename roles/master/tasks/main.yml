@@ -11,18 +11,18 @@
 
 - name: Create Kubernetes config directory
   file:
-    path: /root/.kube/
+    path: /home/pi/.kube/
     state: directory
-    owner: root
-    group: root
+    owner: pi
+    group: pi
     mode: 0755
 
 - name: Copy admin.conf to config directory
   copy:
     src: /etc/kubernetes/admin.conf
-    dest: /root/.kube/config
-    owner: root
-    group: root
+    dest: /home/pi/.kube/config
+    owner: pi
+    group: pi
     mode: 0755
     remote_src: yes
     backup: yes
